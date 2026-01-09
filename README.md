@@ -1,3 +1,3 @@
-# 🕷️ Методичка по Парсингу (Python Data Collection Manual)
+## Методичка по Парсингу (Python Data Collection Manual)
 
-> **[ЧИТАТЬ ОНЛАЙН ВЕРСИЮ (САЙТ)](https://useuseless.github.io/data-collect-manual/)**
+> **[Онлайн-версия - сайт](https://useuseless.github.io/data-collect-manual/)**
