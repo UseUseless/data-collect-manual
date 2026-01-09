@@ -1,15 +1,38 @@
 site_name: Методичка по Парсингу
-site_url: https://YOUR_USERNAME.github.io/REPO_NAME/ 
-# ^ Заменишь потом на свою ссылку
+site_url: https://useuseless.github.io/data-collect-manual/
+
+repo_name: useuseless/data-collect-manual
+repo_url: https://github.com/useuseless/data-collect-manual
+edit_uri: edit/main/docs/ # Ссылка, чтобы править файл прямо в браузере
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/useuseless
+      name: My GitHub
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/ldv92
+      name: Telegram Channel
 
 theme:
   name: material
   language: ru
   palette: 
-    # Темная тема (для настоящих инженеров)
-    - scheme: slate 
+    # Темная тема
+    - scheme: slate
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+    # Светлая тема (По умолчанию)
+    - scheme: default
       primary: teal
       accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   features:
     - navigation.expand # Раскрывать меню
     - navigation.sections # Секции меню
@@ -25,37 +48,38 @@ markdown_extensions:
 
 nav:
   - 'Главная': index.md
-
-  - 'Инструкция по анализу': Инструкция по анализу.md
+  
+  - 'Старт':
+      - 'Инструкция по анализу': analysis_guide.md
+      - 'Обзор инструментов': tools_overview.md
 
   - 'Часть 1: Теория и База':
       - 'Блок 1: Анатомия Жертвы':
-          - 'Введение (SSR vs CSR)': Тема 1 Вводная часть SSR, CSR, SPA и Hydration. В чем разница и как их отличить за 5 секунд.md
-          - 'Скрытые данные (JSON)': Тема 2 Скрытые данные Что такое Next.js Data  Nuxt State и как вытащить JSON прямо из HTML без парсинга тегов.md
-          - 'Протоколы (HTTP/2)': Тема 3 Сетевые протоколы HTTP1.1 vs HTTP2 vs WebSockets. Почему сайт может банить за неправильную версию протокола.md
+          - '1. Введение (SSR vs CSR)': topic_01_intro.md
+          - '2. Скрытые данные (JSON)': topic_02_hidden_json.md
+          - '3. Протоколы (HTTP/2)': topic_03_protocols.md
       - 'Блок 2: Арсенал':
-          - 'Клиенты (Requests/Aiohttp)': Тема 4 Сетевые клиенты requests vs httpx vs aiohttp. Почему requests — это легаси, и зачем нам асинхронность.md
-          - 'Парсеры (BS4/LXML)': Тема 5 Парсеры HTML BeautifulSoup vs lxml vs Selectolax. Когда нужна удобная BS4, а когда скорость lxml.md
-          - 'Браузеры (Selenium/Playwright)': Тема 6 Браузерная автоматизация Selenium vs Playwright. Почему ты ненавидишь Селениум и чем Плейрайт круче.md
-          - 'Спецназ (DrissionPage)': Тема 7 Спецназ DrissionPage и curl_cffi. Что это за звери и когда их применять.md
+          - '4. Клиенты (Requests/Aiohttp)': topic_04_clients.md
+          - '5. Парсеры (BS4/LXML)': topic_05_parsers.md
+          - '6. Браузеры (Selenium/Playwright)': topic_06_browsers.md
+          - '7. Спецназ (DrissionPage)': topic_07_drission.md
       - 'Блок 3: Взлом и Защита':
-          - 'Revers Engineering API': Тема 8 Реверс-инжиниринг API Как найти скрытое API в Network Tab, и какие заголовки (HeadersCookies) критически важны.md
-          - 'Анти-бот (JA3/TLS)': Тема 9 Анти-бот системы Что такое TLS Fingerprint (JA3), и почему сервер видит, что я скрипт на Python, даже если я подменил User-Agent.md
-          - 'Прокси и Ротация': Тема 10 Прокси и Ротация Какие бывают прокси (Residental vs Server) и как правильно менять IP, чтобы не спалиться.md
+          - '8. Revers Engineering API': topic_08_reverse_api.md
+          - '9. Анти-бот (JA3/TLS)': topic_09_antibot.md
+          - '10. Прокси и Ротация': topic_10_proxy.md
       - 'Блок 4: Архитектура':
-          - 'Структуры (Pydantic)': Тема 11 Структура данных Почему dict — это зло, и зачем обязательно использовать Pydantic для парсинга.md
-          - 'Архитектура (Producer/Consumer)': Тема 12 Архитектура парсера Как организовать код (ProducerConsumer), чтобы парсить миллионы страниц и не терять данные при сбое.md
+          - '11. Структуры (Pydantic)': topic_11_pydantic.md
+          - '12. Архитектура (Producer/Consumer)': topic_12_architecture.md
       - 'Блок 5: Логистика':
-          - 'Авторизация и Куки': Тема 13 Авторизация и Сессии Как залогиниться на сайт, сохранить Cookies и поддерживать сессию живой.md
-          - 'Сохранение (DB/Files)': Тема 14 Сохранение данных CSV, JSON или База Данных Как писать на диск и не тормозить асинхронный парсер.md
+          - '13. Авторизация и Куки': topic_13_auth.md
+          - '14. Сохранение (DB/Files)': topic_14_storage.md
 
-  - 'Часть 2: Шаблоны (Copy-Paste and Edit)':
-      - 'Варианты инструментов': Варианты инструментов.md
-      - 'Шаблон 1: Direct API': Инструмент 1 Чистый выстрел (Direct API).md
-      - 'Шаблон 2: Hidden JSON': Инструмент 2 Хирург (Hydration Data Hidden JSON).md
-      - 'Шаблон 3: Static HTML': Инструмент 3 Классика (Static HTML Parsing).md
-      - 'Шаблон 4: TLS Impersonation': Инструмент 4 Хамелеон (TLS Impersonation).md
-      - 'Шаблон 5: Headless Browser': Инструмент 5 Танк (Headless Browser Automation).md
-      - 'Шаблон 6: Anti-Bot Bypass': Инструмент 6 Спецназ (Stealth Anti-Bot Bypass).md
-      - 'Шаблон 7: WebSockets': Инструмент 7 Радист (WebSockets).md
-      - 'Шаблон 8: Mobile API': Инструмент 8 Черный ход (Mobile App API Replay).md
+  - 'Часть 2: Шаблоны (Copy-Paste)':
+      - 'Шаблон 1: Direct API': tool_01_api.md
+      - 'Шаблон 2: Hidden JSON': tool_02_json.md
+      - 'Шаблон 3: Static HTML': tool_03_html.md
+      - 'Шаблон 4: TLS Impersonation': tool_04_tls.md
+      - 'Шаблон 5: Headless Browser': tool_05_browser.md
+      - 'Шаблон 6: Anti-Bot Bypass': tool_06_stealth.md
+      - 'Шаблон 7: WebSockets': tool_07_websockets.md
+      - 'Шаблон 8: Mobile API': tool_08_mobile.md
