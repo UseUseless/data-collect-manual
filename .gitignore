@@ -1,0 +1,12 @@
+# Папка виртуального окружения
+.venv/
+venv/
+__pycache__/
+
+
+# Файлы IDE
+.idea/
+.vscode/
+
+# Сборка MkDocs
+site/

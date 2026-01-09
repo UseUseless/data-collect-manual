@@ -1,0 +1,61 @@
+site_name: Методичка по Парсингу
+site_url: https://YOUR_USERNAME.github.io/REPO_NAME/ 
+# ^ Заменишь потом на свою ссылку
+
+theme:
+  name: material
+  language: ru
+  palette: 
+    # Темная тема (для настоящих инженеров)
+    - scheme: slate 
+      primary: teal
+      accent: purple
+  features:
+    - navigation.expand # Раскрывать меню
+    - navigation.sections # Секции меню
+    - content.code.copy # Кнопка копирования кода (удобно для твоих шаблонов!)
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences # Чтобы блоки кода работали корректно
+  - admonition # Чтобы делать красивые блоки "Внимание!" и "Совет"
+
+nav:
+  - 'Главная': index.md
+
+  - 'Инструкция по анализу': Инструкция по анализу.md
+
+  - 'Часть 1: Теория и База':
+      - 'Блок 1: Анатомия Жертвы':
+          - 'Введение (SSR vs CSR)': Тема 1 Вводная часть SSR, CSR, SPA и Hydration. В чем разница и как их отличить за 5 секунд.md
+          - 'Скрытые данные (JSON)': Тема 2 Скрытые данные Что такое Next.js Data  Nuxt State и как вытащить JSON прямо из HTML без парсинга тегов.md
+          - 'Протоколы (HTTP/2)': Тема 3 Сетевые протоколы HTTP1.1 vs HTTP2 vs WebSockets. Почему сайт может банить за неправильную версию протокола.md
+      - 'Блок 2: Арсенал':
+          - 'Клиенты (Requests/Aiohttp)': Тема 4 Сетевые клиенты requests vs httpx vs aiohttp. Почему requests — это легаси, и зачем нам асинхронность.md
+          - 'Парсеры (BS4/LXML)': Тема 5 Парсеры HTML BeautifulSoup vs lxml vs Selectolax. Когда нужна удобная BS4, а когда скорость lxml.md
+          - 'Браузеры (Selenium/Playwright)': Тема 6 Браузерная автоматизация Selenium vs Playwright. Почему ты ненавидишь Селениум и чем Плейрайт круче.md
+          - 'Спецназ (DrissionPage)': Тема 7 Спецназ DrissionPage и curl_cffi. Что это за звери и когда их применять.md
+      - 'Блок 3: Взлом и Защита':
+          - 'Revers Engineering API': Тема 8 Реверс-инжиниринг API Как найти скрытое API в Network Tab, и какие заголовки (HeadersCookies) критически важны.md
+          - 'Анти-бот (JA3/TLS)': Тема 9 Анти-бот системы Что такое TLS Fingerprint (JA3), и почему сервер видит, что я скрипт на Python, даже если я подменил User-Agent.md
+          - 'Прокси и Ротация': Тема 10 Прокси и Ротация Какие бывают прокси (Residental vs Server) и как правильно менять IP, чтобы не спалиться.md
+      - 'Блок 4: Архитектура':
+          - 'Структуры (Pydantic)': Тема 11 Структура данных Почему dict — это зло, и зачем обязательно использовать Pydantic для парсинга.md
+          - 'Архитектура (Producer/Consumer)': Тема 12 Архитектура парсера Как организовать код (ProducerConsumer), чтобы парсить миллионы страниц и не терять данные при сбое.md
+      - 'Блок 5: Логистика':
+          - 'Авторизация и Куки': Тема 13 Авторизация и Сессии Как залогиниться на сайт, сохранить Cookies и поддерживать сессию живой.md
+          - 'Сохранение (DB/Files)': Тема 14 Сохранение данных CSV, JSON или База Данных Как писать на диск и не тормозить асинхронный парсер.md
+
+  - 'Часть 2: Шаблоны (Copy-Paste and Edit)':
+      - 'Варианты инструментов': Варианты инструментов.md
+      - 'Шаблон 1: Direct API': Инструмент 1 Чистый выстрел (Direct API).md
+      - 'Шаблон 2: Hidden JSON': Инструмент 2 Хирург (Hydration Data Hidden JSON).md
+      - 'Шаблон 3: Static HTML': Инструмент 3 Классика (Static HTML Parsing).md
+      - 'Шаблон 4: TLS Impersonation': Инструмент 4 Хамелеон (TLS Impersonation).md
+      - 'Шаблон 5: Headless Browser': Инструмент 5 Танк (Headless Browser Automation).md
+      - 'Шаблон 6: Anti-Bot Bypass': Инструмент 6 Спецназ (Stealth Anti-Bot Bypass).md
+      - 'Шаблон 7: WebSockets': Инструмент 7 Радист (WebSockets).md
+      - 'Шаблон 8: Mobile API': Инструмент 8 Черный ход (Mobile App API Replay).md
