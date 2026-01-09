@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/">
+        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/topic_14_storage/">
       
       
+        <link rel="prev" href="../topic_13_auth/">
       
-        <link rel="next" href="analysis_guide/">
+      
+        <link rel="next" href="../tool_01_api/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Методичка по Парсингу</title>
+        <title>14. Сохранение (DB/Files) - Методичка по Парсингу</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#14-csv-json" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Главная
+              14. Сохранение (DB/Files)
             
           </span>
         </div>
@@ -226,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -253,37 +255,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Главная
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -299,48 +274,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Структура методички
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 С чего начать?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -406,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis_guide/" class="md-nav__link">
+      <a href="../analysis_guide/" class="md-nav__link">
         
   
   
@@ -434,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools_overview/" class="md-nav__link">
+      <a href="../tools_overview/" class="md-nav__link">
         
   
   
@@ -466,8 +399,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -478,13 +413,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -505,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -574,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_01_intro/" class="md-nav__link">
+      <a href="../topic_01_intro/" class="md-nav__link">
         
   
   
@@ -602,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_02_hidden_json/" class="md-nav__link">
+      <a href="../topic_02_hidden_json/" class="md-nav__link">
         
   
   
@@ -630,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_03_protocols/" class="md-nav__link">
+      <a href="../topic_03_protocols/" class="md-nav__link">
         
   
   
@@ -717,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_04_clients/" class="md-nav__link">
+      <a href="../topic_04_clients/" class="md-nav__link">
         
   
   
@@ -745,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_05_parsers/" class="md-nav__link">
+      <a href="../topic_05_parsers/" class="md-nav__link">
         
   
   
@@ -773,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_06_browsers/" class="md-nav__link">
+      <a href="../topic_06_browsers/" class="md-nav__link">
         
   
   
@@ -801,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_07_drission/" class="md-nav__link">
+      <a href="../topic_07_drission/" class="md-nav__link">
         
   
   
@@ -888,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_08_reverse_api/" class="md-nav__link">
+      <a href="../topic_08_reverse_api/" class="md-nav__link">
         
   
   
@@ -916,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_09_antibot/" class="md-nav__link">
+      <a href="../topic_09_antibot/" class="md-nav__link">
         
   
   
@@ -944,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_10_proxy/" class="md-nav__link">
+      <a href="../topic_10_proxy/" class="md-nav__link">
         
   
   
@@ -1031,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_11_pydantic/" class="md-nav__link">
+      <a href="../topic_11_pydantic/" class="md-nav__link">
         
   
   
@@ -1059,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_12_architecture/" class="md-nav__link">
+      <a href="../topic_12_architecture/" class="md-nav__link">
         
   
   
@@ -1092,6 +1025,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1101,13 +1036,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -1128,7 +1061,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1146,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_13_auth/" class="md-nav__link">
+      <a href="../topic_13_auth/" class="md-nav__link">
         
   
   
@@ -1171,10 +1104,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="topic_14_storage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Сохранение (DB/Files)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1190,6 +1150,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Битва Форматов
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON (Классический) — "Ловушка памяти"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-lines-jsonl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Lines (.jsonl) — "Выбор Профессионала"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV — "Для менеджеров"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Базы Данных (SQLite / PostgreSQL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Техника: Буферизация (Batching)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Инструменты: Асинхронная запись
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonl-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💻 КОД: Умный Сохранятор (JSONL + Buffer)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Финальное напутствие Архитектора
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1271,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_01_api/" class="md-nav__link">
+      <a href="../tool_01_api/" class="md-nav__link">
         
   
   
@@ -1299,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_02_json/" class="md-nav__link">
+      <a href="../tool_02_json/" class="md-nav__link">
         
   
   
@@ -1327,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_03_html/" class="md-nav__link">
+      <a href="../tool_03_html/" class="md-nav__link">
         
   
   
@@ -1355,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_04_tls/" class="md-nav__link">
+      <a href="../tool_04_tls/" class="md-nav__link">
         
   
   
@@ -1383,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_05_browser/" class="md-nav__link">
+      <a href="../tool_05_browser/" class="md-nav__link">
         
   
   
@@ -1411,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_06_stealth/" class="md-nav__link">
+      <a href="../tool_06_stealth/" class="md-nav__link">
         
   
   
@@ -1439,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_07_websockets/" class="md-nav__link">
+      <a href="../tool_07_websockets/" class="md-nav__link">
         
   
   
@@ -1467,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_08_mobile/" class="md-nav__link">
+      <a href="../tool_08_mobile/" class="md-nav__link">
         
   
   
@@ -1522,10 +1601,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Структура методички
+        1. Битва Форматов
       
     </span>
   </a>
@@ -1533,10 +1612,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#json" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 С чего начать?
+        JSON (Классический) — "Ловушка памяти"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-lines-jsonl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON Lines (.jsonl) — "Выбор Профессионала"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSV — "Для менеджеров"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Базы Данных (SQLite / PostgreSQL)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-batching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Техника: Буферизация (Batching)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Инструменты: Асинхронная запись
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonl-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💻 КОД: Умный Сохранятор (JSONL + Buffer)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Финальное напутствие Архитектора
       
     </span>
   </a>
@@ -1563,20 +1719,131 @@
   
 
 
-<h1 id="python">Методичка по Парсингу на Python</h1>
-<p>Привет. Гайд собран на скорую руку, но пока был очень полезен.
-Может и еще кому-то пригодится. Если заметите ошибку - пишите мне.</p>
-<h3 id="_1">📚 Структура методички</h3>
+<h1 id="14-csv-json">Тема 14: Сохранение данных: CSV, JSON или База Данных? Как писать на диск и не тормозить асинхронный парсер?</h1>
+<p>Ты написал парсер-ракету. Он качает 1000 страниц в секунду.
+И тут ты пишешь:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># &lt;--- ТОРМОЗНОЙ ПАРАШЮТ</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>Поздравляю, ты убил асинхронность.
+Обычная запись в файл (<code>open</code>) — это <strong>блокирующая операция</strong>. Пока жесткий диск (даже SSD) крутит блинами или пишет ячейки, твой скрипт стоит. Весь Event Loop встает колом.</p>
+<p>Твоя задача: сбрасывать данные так, чтобы парсер этого даже не замечал.</p>
+<hr />
+<h3 id="1">1. Битва Форматов</h3>
+<h3 id="json">JSON (Классический) — "Ловушка памяти"</h3>
+<p><code>[ {item1}, {item2}, ... ]</code></p>
 <ul>
-<li><strong>Теория:</strong></li>
-<li><strong>Шаблоны:</strong> 8 готовых классов, которые можно копировать в проект.</li>
+<li><strong>Проблема:</strong> Чтобы записать валидный JSON, тебе нужно собрать <strong>ВСЕ</strong> данные в памяти, и только в конце сделать <code>json.dump()</code>.</li>
+<li><strong>Результат:</strong> Если ты парсишь миллион товаров, у тебя кончится оперативка (OOM Kill), и скрипт умрет, не сохранив ни байта.</li>
 </ul>
-<h3 id="_2">🚀 С чего начать?</h3>
-<ol>
-<li>Прочитай <a href="analysis_guide/">Инструкцию по анализу</a>.</li>
-<li>Определи тип сайта.</li>
-<li>Выбери подходящий <a href="tools_overview/">Шаблон</a>.</li>
+<h3 id="json-lines-jsonl">JSON Lines (.jsonl) — "Выбор Профессионала"</h3>
+<p><code>{item1}{item2}</code></p>
+<ul>
+<li><strong>Суть:</strong> Каждая строка — отдельный валидный JSON-объект.</li>
+<li><strong>Плюсы:</strong><ol>
+<li><strong>Append-only:</strong> Можно дописывать по одной строке в конец файла бесконечно.</li>
+<li><strong>Надежность:</strong> Скрипт упал на середине? Всё, что записано — цело.</li>
+<li><strong>Потоковость:</strong> Легко читать по одной строке, не загружая файл в память целиком.</li>
 </ol>
+</li>
+</ul>
+<h3 id="csv">CSV — "Для менеджеров"</h3>
+<ul>
+<li><strong>Плюсы:</strong> Открывается в Excel.</li>
+<li><strong>Минусы:</strong> Ад с вложенностью. Как записать список характеристик в одну ячейку? Через запятую? Кавычки? Это боль. Используй только для плоских таблиц.</li>
+</ul>
+<h3 id="sqlite-postgresql">Базы Данных (SQLite / PostgreSQL)</h3>
+<ul>
+<li><strong>SQLite:</strong> Если данных &lt; 5 млн строк и ты работаешь один. Файл базы лежит рядом. Быстро, надежно (ACID).</li>
+<li><strong>PostgreSQL:</strong> Если данных много, или парсер работает на нескольких серверах одновременно.</li>
+</ul>
+<hr />
+<h3 id="2-batching">2. Техника: Буферизация (Batching)</h3>
+<p>Не пиши на диск каждый товар. Это изнасилует диск (IOPS).
+Используй буфер.</p>
+<ol>
+<li>Копишь товары в памяти (список).</li>
+<li>Набралось 100 штук (или 1000)?</li>
+<li><strong>Сбрасываешь пачкой (Flush)</strong> на диск или в БД.</li>
+<li>Очищаешь память.</li>
+</ol>
+<hr />
+<h3 id="3">3. Инструменты: Асинхронная запись</h3>
+<p>Чтобы не блокировать цикл во время записи, нужны специальные либы:</p>
+<ul>
+<li>Файлы: <strong><code>aiofiles</code></strong></li>
+<li>SQLite: <strong><code>aiosqlite</code></strong></li>
+<li>Postgres: <strong><code>asyncpg</code></strong> (самый быстрый драйвер в мире Python)</li>
+</ul>
+<hr />
+<h3 id="jsonl-buffer">👨‍💻 КОД: Умный Сохранятор (JSONL + Buffer)</h3>
+<p>Напишем класс, который копит данные и асинхронно сбрасывает их в <code>data.jsonl</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">aiofiles</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">class</span><span class="w"> </span><span class="nc">AsyncJsonlSaver</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="n">Dict</span><span class="p">):</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Добавляем товар в буфер. Если полон - сбрасываем.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">flush</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Пишем буфер на диск асинхронно&quot;&quot;&quot;</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">:</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>            <span class="k">return</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="c1"># Открываем файл в режиме &#39;append&#39; (дозапись)</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="k">async</span> <span class="k">with</span> <span class="n">aiofiles</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>            <span class="c1"># Формируем большой кусок текста</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>            <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">]</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>            <span class="n">blob</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">n&quot;</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>            <span class="c1"># Пишем один раз большой кусок</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>            <span class="k">await</span> <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">blob</span><span class="p">)</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;💾 Сбросил </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span><span class="si">}</span><span class="s2"> записей на диск.&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c1"># Чистим буфер</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="c1"># --- ИСПОЛЬЗОВАНИЕ В ПАРСЕРЕ ---</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    <span class="n">saver</span> <span class="o">=</span> <span class="n">AsyncJsonlSaver</span><span class="p">(</span><span class="s2">&quot;products.jsonl&quot;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    <span class="c1"># Имитация парсинга</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">105</span><span class="p">):</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        <span class="n">item</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Товар </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">i</span><span class="p">}</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        <span class="c1"># Это происходит мгновенно, запись будет только на 50 и 100 элементе</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        <span class="k">await</span> <span class="n">saver</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    <span class="c1"># ВАЖНО: В конце всегда нужно сбросить остатки (последние 5 товаров)</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    <span class="k">await</span> <span class="n">saver</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<hr />
+<h3 id="_1">🧠 Финальное напутствие Архитектора</h3>
+<p>Поздравляю. Ты прошел путь от "Как спарсить страничку" до "Как построить промышленный харвестер данных".</p>
+<p>У тебя есть все карты:</p>
+<ol>
+<li><strong>Разведка:</strong> Ты знаешь про SSR/CSR и скрытые JSON-ы.</li>
+<li><strong>Инструменты:</strong> Ты выкинул <code>requests</code> и взял <code>httpx</code>. Ты знаешь про <code>Playwright</code> и <code>DrissionPage</code>.</li>
+<li><strong>Взлом:</strong> Ты умеешь искать API и подделывать TLS-отпечатки.</li>
+<li><strong>Код:</strong> Твой парсер асинхронный (Producer/Consumer), типизированный (Pydantic) и пишет данные батчами.</li>
+</ol>
+<p><strong>Что делать дальше?</strong>
+Иди и спарси что-нибудь сложное. Теория без практики мертва.
+Возьми сайт, который тебя бесит, и вытащи из него данные.
+Наткнешься на бан — вспомни про прокси и TLS.
+Упрешься в скорость — вспомни про профайлинг и Selectolax.</p>
 
 
 
@@ -1647,10 +1914,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

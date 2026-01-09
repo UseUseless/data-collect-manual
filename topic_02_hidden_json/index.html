@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/">
+        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/topic_02_hidden_json/">
       
       
+        <link rel="prev" href="../topic_01_intro/">
       
-        <link rel="next" href="analysis_guide/">
+      
+        <link rel="next" href="../topic_03_protocols/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Методичка по Парсингу</title>
+        <title>2. Скрытые данные (JSON) - Методичка по Парсингу</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#2-nextjs-data-nuxt-state-json-html" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Главная
+              2. Скрытые данные (JSON)
             
           </span>
         </div>
@@ -226,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -253,37 +255,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Главная
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -299,48 +274,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Структура методички
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 С чего начать?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -406,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis_guide/" class="md-nav__link">
+      <a href="../analysis_guide/" class="md-nav__link">
         
   
   
@@ -434,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools_overview/" class="md-nav__link">
+      <a href="../tools_overview/" class="md-nav__link">
         
   
   
@@ -466,8 +399,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -478,13 +413,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -505,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -520,6 +453,8 @@
                 
   
   
+    
+  
   
   
     
@@ -529,13 +464,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -556,7 +489,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -574,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_01_intro/" class="md-nav__link">
+      <a href="../topic_01_intro/" class="md-nav__link">
         
   
   
@@ -599,10 +532,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="topic_02_hidden_json/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Скрытые данные (JSON)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -618,6 +578,136 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Где лежит клад? (Анатомия)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тип А: Next.js (Самый популярный)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuxtjs-redux-state-global-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тип Б: Nuxt.js / Redux State / Global Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Чем добывать? (Инструментарий)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Next.js (Чистый JSON)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuxtjs-js-chompjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Nuxt.js и "Грязного JS" (Библиотека chompjs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-code-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Техника исполнения (Code Snippets)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарий 1: Идеальный Next.js
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-js-nuxtother" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарий 2: Грязный JS (Nuxt/Other)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕵️‍♂️ Почему это лучше, чем парсить HTML?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -630,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_03_protocols/" class="md-nav__link">
+      <a href="../topic_03_protocols/" class="md-nav__link">
         
   
   
@@ -717,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_04_clients/" class="md-nav__link">
+      <a href="../topic_04_clients/" class="md-nav__link">
         
   
   
@@ -745,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_05_parsers/" class="md-nav__link">
+      <a href="../topic_05_parsers/" class="md-nav__link">
         
   
   
@@ -773,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_06_browsers/" class="md-nav__link">
+      <a href="../topic_06_browsers/" class="md-nav__link">
         
   
   
@@ -801,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_07_drission/" class="md-nav__link">
+      <a href="../topic_07_drission/" class="md-nav__link">
         
   
   
@@ -888,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_08_reverse_api/" class="md-nav__link">
+      <a href="../topic_08_reverse_api/" class="md-nav__link">
         
   
   
@@ -916,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_09_antibot/" class="md-nav__link">
+      <a href="../topic_09_antibot/" class="md-nav__link">
         
   
   
@@ -944,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_10_proxy/" class="md-nav__link">
+      <a href="../topic_10_proxy/" class="md-nav__link">
         
   
   
@@ -1031,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_11_pydantic/" class="md-nav__link">
+      <a href="../topic_11_pydantic/" class="md-nav__link">
         
   
   
@@ -1059,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_12_architecture/" class="md-nav__link">
+      <a href="../topic_12_architecture/" class="md-nav__link">
         
   
   
@@ -1146,7 +1236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_13_auth/" class="md-nav__link">
+      <a href="../topic_13_auth/" class="md-nav__link">
         
   
   
@@ -1174,7 +1264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_14_storage/" class="md-nav__link">
+      <a href="../topic_14_storage/" class="md-nav__link">
         
   
   
@@ -1271,7 +1361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_01_api/" class="md-nav__link">
+      <a href="../tool_01_api/" class="md-nav__link">
         
   
   
@@ -1299,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_02_json/" class="md-nav__link">
+      <a href="../tool_02_json/" class="md-nav__link">
         
   
   
@@ -1327,7 +1417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_03_html/" class="md-nav__link">
+      <a href="../tool_03_html/" class="md-nav__link">
         
   
   
@@ -1355,7 +1445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_04_tls/" class="md-nav__link">
+      <a href="../tool_04_tls/" class="md-nav__link">
         
   
   
@@ -1383,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_05_browser/" class="md-nav__link">
+      <a href="../tool_05_browser/" class="md-nav__link">
         
   
   
@@ -1411,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_06_stealth/" class="md-nav__link">
+      <a href="../tool_06_stealth/" class="md-nav__link">
         
   
   
@@ -1439,7 +1529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_07_websockets/" class="md-nav__link">
+      <a href="../tool_07_websockets/" class="md-nav__link">
         
   
   
@@ -1467,7 +1557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_08_mobile/" class="md-nav__link">
+      <a href="../tool_08_mobile/" class="md-nav__link">
         
   
   
@@ -1522,10 +1612,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Структура методички
+        1. Где лежит клад? (Анатомия)
       
     </span>
   </a>
@@ -1533,10 +1623,98 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#nextjs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 С чего начать?
+        Тип А: Next.js (Самый популярный)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuxtjs-redux-state-global-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тип Б: Nuxt.js / Redux State / Global Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Чем добывать? (Инструментарий)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nextjs-json" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Next.js (Чистый JSON)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nuxtjs-js-chompjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Для Nuxt.js и "Грязного JS" (Библиотека chompjs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-code-snippets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Техника исполнения (Code Snippets)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-nextjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарий 1: Идеальный Next.js
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-js-nuxtother" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сценарий 2: Грязный JS (Nuxt/Other)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕵️‍♂️ Почему это лучше, чем парсить HTML?
       
     </span>
   </a>
@@ -1563,20 +1741,109 @@
   
 
 
-<h1 id="python">Методичка по Парсингу на Python</h1>
-<p>Привет. Гайд собран на скорую руку, но пока был очень полезен.
-Может и еще кому-то пригодится. Если заметите ошибку - пишите мне.</p>
-<h3 id="_1">📚 Структура методички</h3>
+<h1 id="2-nextjs-data-nuxt-state-json-html">Тема 2: Скрытые данные: Что такое Next.js Data / Nuxt State и как вытащить JSON прямо из HTML без парсинга тегов?</h1>
+<p>Забудь про <code>soup.find('div', class_='price-v2-red')</code>. Это для школьников. Классы меняются, верстка едет, дизайнеры двигают кнопки.
+Данные ("State" или "Состояние") — вечны.</p>
+<p>Если сайт написан на <strong>Next.js</strong> (React) или <strong>Nuxt.js</strong> (Vue), разработчики оставляют нам подарок. Они обязаны передать браузеру "слепок" всех данных, чтобы JS-фреймворк знал, что рисовать. И этот слепок лежит в HTML в виде текста.</p>
+<p>Наша задача: <strong>Хирургически вырезать этот кусок и превратить в Python Dictionary.</strong></p>
+<hr />
+<h3 id="1">1. Где лежит клад? (Анатомия)</h3>
+<h3 id="nextjs">Тип А: Next.js (Самый популярный)</h3>
+<p>Разработчики Next.js — святые люди. Они кладут данные в тег с фиксированным ID. Это <strong>валидный JSON</strong>.</p>
 <ul>
-<li><strong>Теория:</strong></li>
-<li><strong>Шаблоны:</strong> 8 готовых классов, которые можно копировать в проект.</li>
+<li>
+<p><strong>Как выглядит:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;__NEXT_DATA__&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;application/json&quot;</span><span class="p">&gt;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="s2">&quot;props&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;pageProps&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;product&quot;</span><span class="o">:</span><span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="o">:</span><span class="mf">123</span><span class="p">,</span><span class="s2">&quot;name&quot;</span><span class="o">:</span><span class="s2">&quot;Iphone&quot;</span><span class="p">,</span><span class="s2">&quot;price&quot;</span><span class="o">:</span><span class="mf">999</span><span class="p">}}}}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+</li>
+<li>
+<p><strong>Что внутри:</strong> Вообще всё. Данные о товаре, категории, хлебные крошки, и часто даже то, что скрыто на сайте (остатки на складе, себестоимость, внутренние ID).</p>
+</li>
 </ul>
-<h3 id="_2">🚀 С чего начать?</h3>
+<h3 id="nuxtjs-redux-state-global-variables">Тип Б: Nuxt.js / Redux State / Global Variables</h3>
+<p>Тут сложнее. Это не чистый JSON, а <strong>JavaScript-объект</strong>. Ключи могут быть без кавычек, могут быть <code>undefined</code>.</p>
+<ul>
+<li>
+<p><strong>Как выглядит:</strong>
+Или:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">__NUXT__</span><span class="o">=</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">){</span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="nx">state</span><span class="o">:</span><span class="p">{</span><span class="nx">product</span><span class="o">:</span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="s2">&quot;Iphone&quot;</span><span class="p">}}...}});&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nb">window</span><span class="p">.</span><span class="nx">initialState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Alex&#39;</span><span class="p">}}&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+</li>
+</ul>
+<hr />
+<h3 id="2">2. Чем добывать? (Инструментарий)</h3>
+<h3 id="nextjs-json">Для Next.js (Чистый JSON)</h3>
+<p>Тебе нужны только стандартный <code>json</code> и любой HTML-парсер (хоть <code>BeautifulSoup</code>, хоть <code>Selectolax</code>), чтобы найти тег.</p>
+<h3 id="nuxtjs-js-chompjs">Для Nuxt.js и "Грязного JS" (Библиотека <code>chompjs</code>)</h3>
+<p>Стандартный <code>json.loads()</code> упадет с ошибкой, потому что <code>{key: "value"}</code> (без кавычек у ключа) — это валидный JS, но невалидный JSON.
+Тут на сцену выходит библиотека <strong><code>chompjs</code></strong>.</p>
+<ul>
+<li><strong>Что делает:</strong> Она берет строку с кривым JS-объектом и превращает её в валидный Python dict. Она игнорирует функции и мусор, вытаскивая только данные.</li>
+<li><em>Установка:</em> <code>pip install chompjs</code></li>
+</ul>
+<hr />
+<h3 id="3-code-snippets">3. Техника исполнения (Code Snippets)</h3>
+<h3 id="1-nextjs">Сценарий 1: Идеальный Next.js</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="c1"># Или Selectolax, неважно</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">html</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;https://example-nextjs-site.com&gt;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># 1. Ищем тег по ID</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">script_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;__NEXT_DATA__&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">if</span> <span class="n">script_tag</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="c1"># 2. Берем текст внутри</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="n">json_text</span> <span class="o">=</span> <span class="n">script_tag</span><span class="o">.</span><span class="n">string</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    <span class="c1"># 3. Превращаем в словарь</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_text</span><span class="p">)</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="c1"># 4. Радуемся. Путь до данных обычно длинный, но надежный:</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="n">product</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;props&#39;</span><span class="p">][</span><span class="s1">&#39;pageProps&#39;</span><span class="p">][</span><span class="s1">&#39;product&#39;</span><span class="p">]</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Товар: </span><span class="si">{</span><span class="n">product</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, Цена: </span><span class="si">{</span><span class="n">product</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="2-js-nuxtother">Сценарий 2: Грязный JS (Nuxt/Other)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">chompjs</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">html</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;https://example-nuxt-site.com&gt;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># 1. Ищем скрипт, содержащий ключевую переменную</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c1"># Тут придется поискать глазами в Ctrl+U, как называется переменная:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># __NUXT__, __INITIAL_STATE__, window.App</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="n">scripts</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">target_script</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="k">for</span> <span class="n">script</span> <span class="ow">in</span> <span class="n">scripts</span><span class="p">:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    <span class="k">if</span> <span class="n">script</span><span class="o">.</span><span class="n">string</span> <span class="ow">and</span> <span class="s2">&quot;window.__NUXT__&quot;</span> <span class="ow">in</span> <span class="n">script</span><span class="o">.</span><span class="n">string</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="n">target_script</span> <span class="o">=</span> <span class="n">script</span><span class="o">.</span><span class="n">string</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">break</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="k">if</span> <span class="n">target_script</span><span class="p">:</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    <span class="c1"># 2. Скармливаем ВЕСЬ кусок кода в chompjs</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    <span class="c1"># Он сам найдет объект и распарсит его</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">chompjs</span><span class="o">.</span><span class="n">parse_js_object</span><span class="p">(</span><span class="n">target_script</span><span class="p">)</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Это уже Python Dict</span>
+</code></pre></div>
+<hr />
+<h3 id="html">🕵️‍♂️ Почему это лучше, чем парсить HTML?</h3>
 <ol>
-<li>Прочитай <a href="analysis_guide/">Инструкцию по анализу</a>.</li>
-<li>Определи тип сайта.</li>
-<li>Выбери подходящий <a href="tools_overview/">Шаблон</a>.</li>
+<li><strong>Полнота данных:</strong> В HTML может быть написано "Цена со скидкой", а в JSON лежат поля <code>price_regular</code>, <code>price_discount</code>, <code>currency</code>, <code>vat_rate</code>. Ты получаешь сырые данные из базы.</li>
+<li><strong>Типизация:</strong> В HTML "1 000 руб." — это строка с пробелом и мусором. В JSON это <code>1000</code> (integer). Не надо чистить данные.</li>
+<li><strong>Стабильность:</strong> Верстку (CSS-классы) меняют раз в месяц. Структуру данных (<code>props</code>) меняют раз в год, потому что это ломает фронтенд.</li>
 </ol>
+<p><strong>Резюме:</strong>
+Перед тем как парсить классы <code>div</code>'ов, потрать 5 минут на поиск <code>__NEXT_DATA__</code> или <code>window.__STATE__</code>. Если найдешь — сэкономишь 5 часов отладки.</p>
 
 
 
@@ -1647,10 +1914,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

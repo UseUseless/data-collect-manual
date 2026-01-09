@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/">
+        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/topic_05_parsers/">
       
       
+        <link rel="prev" href="../topic_04_clients/">
       
-        <link rel="next" href="analysis_guide/">
+      
+        <link rel="next" href="../topic_06_browsers/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Методичка по Парсингу</title>
+        <title>5. Парсеры (BS4/LXML) - Методичка по Парсингу</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#5-html-beautifulsoup-vs-lxml-vs-selectolax-bs4-lxml" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Главная
+              5. Парсеры (BS4/LXML)
             
           </span>
         </div>
@@ -226,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -253,37 +255,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Главная
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -299,48 +274,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Структура методички
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 С чего начать?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -406,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis_guide/" class="md-nav__link">
+      <a href="../analysis_guide/" class="md-nav__link">
         
   
   
@@ -434,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools_overview/" class="md-nav__link">
+      <a href="../tools_overview/" class="md-nav__link">
         
   
   
@@ -466,8 +399,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -478,13 +413,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -505,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -574,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_01_intro/" class="md-nav__link">
+      <a href="../topic_01_intro/" class="md-nav__link">
         
   
   
@@ -602,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_02_hidden_json/" class="md-nav__link">
+      <a href="../topic_02_hidden_json/" class="md-nav__link">
         
   
   
@@ -630,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_03_protocols/" class="md-nav__link">
+      <a href="../topic_03_protocols/" class="md-nav__link">
         
   
   
@@ -663,6 +596,8 @@
                 
   
   
+    
+  
   
   
     
@@ -672,13 +607,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -699,7 +632,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -717,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_04_clients/" class="md-nav__link">
+      <a href="../topic_04_clients/" class="md-nav__link">
         
   
   
@@ -742,10 +675,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="topic_05_parsers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Парсеры (BS4/LXML)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -761,6 +721,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-beautifulsoup4-bs4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. BeautifulSoup4 (BS4) — "Уютный диван"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. lxml — "Промышленный станок"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-selectolax-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Selectolax — "Болид Формулы-1"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚔️ ТЕСТ НА СКОРОСТЬ (Benchmark)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💻 КОД: Почувствуй синтаксис
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beautifulsoup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BeautifulSoup (Удобно)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lxml-xpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lxml (Мощно - XPath)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectolax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selectolax (Быстро)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Вывод Архитектора:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -773,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_06_browsers/" class="md-nav__link">
+      <a href="../topic_06_browsers/" class="md-nav__link">
         
   
   
@@ -801,7 +880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_07_drission/" class="md-nav__link">
+      <a href="../topic_07_drission/" class="md-nav__link">
         
   
   
@@ -888,7 +967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_08_reverse_api/" class="md-nav__link">
+      <a href="../topic_08_reverse_api/" class="md-nav__link">
         
   
   
@@ -916,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_09_antibot/" class="md-nav__link">
+      <a href="../topic_09_antibot/" class="md-nav__link">
         
   
   
@@ -944,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_10_proxy/" class="md-nav__link">
+      <a href="../topic_10_proxy/" class="md-nav__link">
         
   
   
@@ -1031,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_11_pydantic/" class="md-nav__link">
+      <a href="../topic_11_pydantic/" class="md-nav__link">
         
   
   
@@ -1059,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_12_architecture/" class="md-nav__link">
+      <a href="../topic_12_architecture/" class="md-nav__link">
         
   
   
@@ -1146,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_13_auth/" class="md-nav__link">
+      <a href="../topic_13_auth/" class="md-nav__link">
         
   
   
@@ -1174,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_14_storage/" class="md-nav__link">
+      <a href="../topic_14_storage/" class="md-nav__link">
         
   
   
@@ -1271,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_01_api/" class="md-nav__link">
+      <a href="../tool_01_api/" class="md-nav__link">
         
   
   
@@ -1299,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_02_json/" class="md-nav__link">
+      <a href="../tool_02_json/" class="md-nav__link">
         
   
   
@@ -1327,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_03_html/" class="md-nav__link">
+      <a href="../tool_03_html/" class="md-nav__link">
         
   
   
@@ -1355,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_04_tls/" class="md-nav__link">
+      <a href="../tool_04_tls/" class="md-nav__link">
         
   
   
@@ -1383,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_05_browser/" class="md-nav__link">
+      <a href="../tool_05_browser/" class="md-nav__link">
         
   
   
@@ -1411,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_06_stealth/" class="md-nav__link">
+      <a href="../tool_06_stealth/" class="md-nav__link">
         
   
   
@@ -1439,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_07_websockets/" class="md-nav__link">
+      <a href="../tool_07_websockets/" class="md-nav__link">
         
   
   
@@ -1467,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_08_mobile/" class="md-nav__link">
+      <a href="../tool_08_mobile/" class="md-nav__link">
         
   
   
@@ -1522,10 +1601,87 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-beautifulsoup4-bs4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. BeautifulSoup4 (BS4) — "Уютный диван"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-lxml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. lxml — "Промышленный станок"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-selectolax-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Selectolax — "Болид Формулы-1"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚔️ ТЕСТ НА СКОРОСТЬ (Benchmark)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Структура методички
+        👨‍💻 КОД: Почувствуй синтаксис
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#beautifulsoup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BeautifulSoup (Удобно)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lxml-xpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lxml (Мощно - XPath)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selectolax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selectolax (Быстро)
       
     </span>
   </a>
@@ -1536,7 +1692,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 С чего начать?
+        🧠 Вывод Архитектора:
       
     </span>
   </a>
@@ -1563,19 +1719,113 @@
   
 
 
-<h1 id="python">Методичка по Парсингу на Python</h1>
-<p>Привет. Гайд собран на скорую руку, но пока был очень полезен.
-Может и еще кому-то пригодится. Если заметите ошибку - пишите мне.</p>
-<h3 id="_1">📚 Структура методички</h3>
+<h1 id="5-html-beautifulsoup-vs-lxml-vs-selectolax-bs4-lxml">Тема 5: Парсеры HTML: BeautifulSoup vs lxml vs Selectolax. Когда нужна удобная BS4, а когда скорость lxml?</h1>
+<p>Итак, ты скачал HTML. Теперь это просто длинная, тупая строка текста на 500 килобайт.
+Твоя задача — найти в этой куче мусора один маленький бриллиант (цену).
+Для этого нужен парсер — инструмент, который превращает текст в дерево объектов (DOM), по которому можно ходить.</p>
+<p>Выбор парсера — это выбор между <strong>комфортом</strong> и <strong>производительностью</strong>.</p>
+<hr />
+<h3 id="1-beautifulsoup4-bs4">1. BeautifulSoup4 (BS4) — "Уютный диван"</h3>
+<p>Это самая популярная библиотека. На ней пишут 99% туториалов.</p>
 <ul>
-<li><strong>Теория:</strong></li>
-<li><strong>Шаблоны:</strong> 8 готовых классов, которые можно копировать в проект.</li>
+<li><strong>Суть:</strong> Это не сам парсер, это обертка. Она может использовать под капотом медленный питоновский <code>html.parser</code> или быстрый <code>lxml</code>.</li>
+<li><strong>Плюсы:</strong><ul>
+<li><strong>Невероятно удобная:</strong> <code>soup.find('div').text</code>. Читается как английский язык.</li>
+<li><strong>Всеядная:</strong> Жрет любой кривой, поломанный, незакрытый HTML. Она сама додумает, где закрыть тег.</li>
 </ul>
-<h3 id="_2">🚀 С чего начать?</h3>
+</li>
+<li><strong>Минусы:</strong><ul>
+<li><strong>Медленная:</strong> Создает кучу питоновских объектов. Жрет память. На объемах 100к+ страниц ты постареешь, пока она закончит.</li>
+</ul>
+</li>
+<li><strong>Вердикт:</strong> Идеальна для новичков, прототипов и задач "спарсить 100 статей".</li>
+</ul>
+<h3 id="2-lxml">2. lxml — "Промышленный станок"</h3>
+<p>Это стандарт индустрии. Написана на C (libxml2).</p>
+<ul>
+<li><strong>Суть:</strong> Жесткая, быстрая, мощная.</li>
+<li><strong>Киллер-фича:</strong> Поддержка <strong>XPath</strong>. Это язык запросов к XML/HTML, который в 10 раз мощнее CSS-селекторов. Ты можешь сказать: <em>"Дай мне ссылку, которая находится внутри второго дива, у которого есть сосед с текстом 'Цена'"</em>. CSS так не умеет.</li>
+<li><strong>Плюсы:</strong> Очень быстрая.</li>
+<li><strong>Минусы:</strong> API чуть сложнее (деревянное).</li>
+<li><strong>Вердикт:</strong> Выбор профи. Если нужен сложный поиск (вверх-вниз по дереву) — только <code>lxml</code> + XPath.</li>
+</ul>
+<h3 id="3-selectolax-1">3. Selectolax — "Болид Формулы-1"</h3>
+<p>Это современный зверь. Обертка над движком Modest (написан на C, без лишних зависимостей).</p>
+<ul>
+<li><strong>Суть:</strong> Скорость любой ценой.</li>
+<li><strong>Плюсы:</strong><ul>
+<li><strong>Безумно быстрая:</strong> В 10-20 раз быстрее BeautifulSoup. Она почти не нагружает процессор.</li>
+<li><strong>Легкая:</strong> Минимум потребления RAM.</li>
+</ul>
+</li>
+<li><strong>Минусы:</strong> Поддерживает только CSS-селекторы. Если тебе нужен сложный XPath — увы. Чуть менее удобный API.</li>
+<li><strong>Вердикт:</strong> Если ты парсишь миллион страниц и структура простая — это безальтернативный выбор.</li>
+</ul>
+<hr />
+<h3 id="benchmark">⚔️ ТЕСТ НА СКОРОСТЬ (Benchmark)</h3>
+<p>Представь, что мы парсим страницу Amazon (200 КБ HTML).</p>
+<table>
+<thead>
+<tr>
+<th>Парсер</th>
+<th>Время на 1 стр.</th>
+<th>Нагрузка CPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BeautifulSoup</strong></td>
+<td>~20.0 мс</td>
+<td>🔥 Высокая</td>
+</tr>
+<tr>
+<td><strong>lxml</strong></td>
+<td>~4.0 мс</td>
+<td>🟡 Средняя</td>
+</tr>
+<tr>
+<td><strong>Selectolax</strong></td>
+<td><strong>~0.8 мс</strong></td>
+<td>🟢 Почти ноль</td>
+</tr>
+</tbody>
+</table>
+<p><em>Разница между 20мс и 0.8мс кажется смешной? Умножь на 1 000 000 страниц.</em></p>
+<ul>
+<li>BS4: <strong>5.5 часов</strong> чистого парсинга.</li>
+<li>Selectolax: <strong>13 минут</strong>.</li>
+</ul>
+<hr />
+<h3 id="_1">👨‍💻 КОД: Почувствуй синтаксис</h3>
+<p>Задача: Достать заголовок <code>&lt;h1&gt;</code> с классом <code>title</code>.</p>
+<h3 id="beautifulsoup">BeautifulSoup (Удобно)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="s2">&quot;lxml&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Методы pythonic-style</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;h1&quot;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s2">&quot;title&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+</code></pre></div>
+<h3 id="lxml-xpath">lxml (Мощно - XPath)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">lxml</span><span class="w"> </span><span class="kn">import</span> <span class="n">html</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">tree</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># XPath - мощь. &quot;//&quot; - искать везде, &quot;@class&quot; - атрибут</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Возвращает ВСЕГДА список</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">title</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//h1[@class=&quot;title&quot;]/text()&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="selectolax">Selectolax (Быстро)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">selectolax.parser</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTMLParser</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">tree</span> <span class="o">=</span> <span class="n">HTMLParser</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># CSS селекторы only. Синтаксис чуть строже.</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">node</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">css_first</span><span class="p">(</span><span class="s2">&quot;h1.title&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">title</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">text</span><span class="p">()</span> <span class="k">if</span> <span class="n">node</span> <span class="k">else</span> <span class="kc">None</span>
+</code></pre></div>
+<h3 id="_2">🧠 Вывод Архитектора:</h3>
 <ol>
-<li>Прочитай <a href="analysis_guide/">Инструкцию по анализу</a>.</li>
-<li>Определи тип сайта.</li>
-<li>Выбери подходящий <a href="tools_overview/">Шаблон</a>.</li>
+<li><strong>Начинай с BeautifulSoup.</strong> Серьезно. Не выпендривайся. Пока ты пишешь логику и отлаживаешь селекторы — удобство важнее скорости.</li>
+<li><strong>Уперся в скорость?</strong> Переключайся на <code>Selectolax</code>. Переписать селекторы займет 10 минут, а прирост скорости получишь колоссальный.</li>
+<li><strong>Сложная верстка?</strong> Если элемент хрен найдешь (нет классов, только "третий <code>div</code> после пятого <code>span</code>") — бери <code>lxml</code> и пиши <strong>XPath</strong>. Это спасет твои нервы.</li>
 </ol>
 
 
@@ -1647,10 +1897,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/">
+        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/topic_04_clients/">
       
       
+        <link rel="prev" href="../topic_03_protocols/">
       
-        <link rel="next" href="analysis_guide/">
+      
+        <link rel="next" href="../topic_05_parsers/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Методичка по Парсингу</title>
+        <title>4. Клиенты (Requests/Aiohttp) - Методичка по Парсингу</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#4-requests-vs-httpx-vs-aiohttp-requests" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Главная
+              4. Клиенты (Requests/Aiohttp)
             
           </span>
         </div>
@@ -226,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -253,37 +255,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Главная
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -299,48 +274,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Структура методички
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 С чего начать?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -406,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis_guide/" class="md-nav__link">
+      <a href="../analysis_guide/" class="md-nav__link">
         
   
   
@@ -434,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools_overview/" class="md-nav__link">
+      <a href="../tools_overview/" class="md-nav__link">
         
   
   
@@ -466,8 +399,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -478,13 +413,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -505,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -574,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_01_intro/" class="md-nav__link">
+      <a href="../topic_01_intro/" class="md-nav__link">
         
   
   
@@ -602,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_02_hidden_json/" class="md-nav__link">
+      <a href="../topic_02_hidden_json/" class="md-nav__link">
         
   
   
@@ -630,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_03_protocols/" class="md-nav__link">
+      <a href="../topic_03_protocols/" class="md-nav__link">
         
   
   
@@ -663,6 +596,8 @@
                 
   
   
+    
+  
   
   
     
@@ -672,13 +607,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -699,7 +632,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -714,10 +647,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="topic_04_clients/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Клиенты (Requests/Aiohttp)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -733,6 +693,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Requests — "Старый добрый тормоз"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aiohttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Aiohttp — "Асинхронный конвейер"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-httpx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Httpx — "Новый Король"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚔️ СРАВНЕНИЕ В БОЮ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👨‍💻 КОД: Почувствуй разницу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Синхронный ад (Requests):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpx-aiohttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Асинхронный рай (Httpx / Aiohttp):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Вывод Архитектора:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -745,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_05_parsers/" class="md-nav__link">
+      <a href="../topic_05_parsers/" class="md-nav__link">
         
   
   
@@ -773,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_06_browsers/" class="md-nav__link">
+      <a href="../topic_06_browsers/" class="md-nav__link">
         
   
   
@@ -801,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_07_drission/" class="md-nav__link">
+      <a href="../topic_07_drission/" class="md-nav__link">
         
   
   
@@ -888,7 +956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_08_reverse_api/" class="md-nav__link">
+      <a href="../topic_08_reverse_api/" class="md-nav__link">
         
   
   
@@ -916,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_09_antibot/" class="md-nav__link">
+      <a href="../topic_09_antibot/" class="md-nav__link">
         
   
   
@@ -944,7 +1012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_10_proxy/" class="md-nav__link">
+      <a href="../topic_10_proxy/" class="md-nav__link">
         
   
   
@@ -1031,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_11_pydantic/" class="md-nav__link">
+      <a href="../topic_11_pydantic/" class="md-nav__link">
         
   
   
@@ -1059,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_12_architecture/" class="md-nav__link">
+      <a href="../topic_12_architecture/" class="md-nav__link">
         
   
   
@@ -1146,7 +1214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_13_auth/" class="md-nav__link">
+      <a href="../topic_13_auth/" class="md-nav__link">
         
   
   
@@ -1174,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_14_storage/" class="md-nav__link">
+      <a href="../topic_14_storage/" class="md-nav__link">
         
   
   
@@ -1271,7 +1339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_01_api/" class="md-nav__link">
+      <a href="../tool_01_api/" class="md-nav__link">
         
   
   
@@ -1299,7 +1367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_02_json/" class="md-nav__link">
+      <a href="../tool_02_json/" class="md-nav__link">
         
   
   
@@ -1327,7 +1395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_03_html/" class="md-nav__link">
+      <a href="../tool_03_html/" class="md-nav__link">
         
   
   
@@ -1355,7 +1423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_04_tls/" class="md-nav__link">
+      <a href="../tool_04_tls/" class="md-nav__link">
         
   
   
@@ -1383,7 +1451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_05_browser/" class="md-nav__link">
+      <a href="../tool_05_browser/" class="md-nav__link">
         
   
   
@@ -1411,7 +1479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_06_stealth/" class="md-nav__link">
+      <a href="../tool_06_stealth/" class="md-nav__link">
         
   
   
@@ -1439,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_07_websockets/" class="md-nav__link">
+      <a href="../tool_07_websockets/" class="md-nav__link">
         
   
   
@@ -1467,7 +1535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_08_mobile/" class="md-nav__link">
+      <a href="../tool_08_mobile/" class="md-nav__link">
         
   
   
@@ -1522,10 +1590,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#1-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Requests — "Старый добрый тормоз"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aiohttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Aiohttp — "Асинхронный конвейер"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-httpx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Httpx — "Новый Король"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Структура методички
+        ⚔️ СРАВНЕНИЕ В БОЮ
       
     </span>
   </a>
@@ -1536,7 +1637,40 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 С чего начать?
+        👨‍💻 КОД: Почувствуй разницу
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Синхронный ад (Requests):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#httpx-aiohttp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Асинхронный рай (Httpx / Aiohttp):
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Вывод Архитектора:
       
     </span>
   </a>
@@ -1563,20 +1697,126 @@
   
 
 
-<h1 id="python">Методичка по Парсингу на Python</h1>
-<p>Привет. Гайд собран на скорую руку, но пока был очень полезен.
-Может и еще кому-то пригодится. Если заметите ошибку - пишите мне.</p>
-<h3 id="_1">📚 Структура методички</h3>
+<h1 id="4-requests-vs-httpx-vs-aiohttp-requests">Тема 4: Сетевые клиенты: requests vs httpx vs aiohttp. Почему requests — это легаси, и зачем нам асинхронность?</h1>
+<p>В парсинге есть два греха: <strong>тупость</strong> (плохой алгоритм) и <strong>простой</strong> (блокировка).
+Выбор библиотеки определяет, будет твой скрипт спать 90% времени или работать.</p>
+<h3 id="1-requests">1. Requests — "Старый добрый тормоз"</h3>
+<p>Это библиотека, на которой учились наши деды.</p>
 <ul>
-<li><strong>Теория:</strong></li>
-<li><strong>Шаблоны:</strong> 8 готовых классов, которые можно копировать в проект.</li>
+<li><strong>Тип:</strong> Синхронная (Блокирующая).</li>
+<li><strong>Как работает:</strong> Ты отправил запрос -&gt; Скрипт <strong>ЗАМЕР</strong> и ждет ответа. Процессор курит, память простаивает. Пока сервер не ответит (или не отвалится по таймауту), следующая строка кода не выполнится.</li>
+<li><strong>Аналогия:</strong> Ты заказал пиццу по телефону и стоишь у входной двери с открытым ртом, ожидая курьера. Ты не можешь ни читать книгу, ни смотреть ТВ. Ты просто ждешь.</li>
+<li><strong>Вердикт:</strong> Для скриптов "спарсить 5 страниц раз в день" — пойдет. Для парсинга 1000+ страниц — <strong>смерть</strong>. 1000 запросов по 1 секунде = 16 минут ожидания.</li>
+<li><strong>Минус:</strong> Не умеет HTTP/2.</li>
 </ul>
-<h3 id="_2">🚀 С чего начать?</h3>
+<h3 id="2-aiohttp">2. Aiohttp — "Асинхронный конвейер"</h3>
+<p>Это стандарт индустрии для высоконагруженных систем.</p>
+<ul>
+<li><strong>Тип:</strong> Асинхронная (Non-blocking).</li>
+<li><strong>Как работает:</strong> Ты отправил запрос -&gt; Скрипт <strong>НЕ ЖДЕТ</strong>, а идет выполнять следующую задачу. Когда ответ придет, скрипт вернется и обработает его.</li>
+<li><strong>Аналогия:</strong> Ты заказал пиццу, положил трубку и пошел играть в PlayStation. Заказал суши — продолжил играть. Курьеры приходят параллельно, ты просто забираешь еду в перерывах.</li>
+<li><strong>Скорость:</strong> 1000 запросов отправляются почти мгновенно. Время выполнения = время ответа самого медленного запроса. 16 минут превращаются в 10 секунд.</li>
+<li><strong>Минус:</strong> API чуть сложнее, чем у <code>requests</code>. Нужно знать <code>async/await</code>.</li>
+</ul>
+<h3 id="3-httpx">3. Httpx — "Новый Король"</h3>
+<p>Это современная замена <code>requests</code>, вобравшая в себя всё лучшее.</p>
+<ul>
+<li><strong>Тип:</strong> Гибрид (умеет и синхронно, и асинхронно).</li>
+<li><strong>Киллер-фича:</strong> Поддержка <strong>HTTP/2</strong> из коробки. <code>aiohttp</code> и <code>requests</code> этого не умеют (без танцев с бубном).</li>
+<li><strong>API:</strong> Полностью совместим с <code>requests</code>. Переехать на него — дело 5 минут.</li>
+<li><strong>Вердикт:</strong> Это мой выбор по умолчанию в 2026 году.</li>
+</ul>
+<hr />
+<h3 id="_1">⚔️ СРАВНЕНИЕ В БОЮ</h3>
+<table>
+<thead>
+<tr>
+<th>Характеристика</th>
+<th>Requests</th>
+<th>Aiohttp</th>
+<th>Httpx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Режим</strong></td>
+<td>Только Sync</td>
+<td>Только Async</td>
+<td>Sync + Async</td>
+</tr>
+<tr>
+<td><strong>Скорость (1000 URL)</strong></td>
+<td>🐌 Черепаха</td>
+<td>🚀 Ракета</td>
+<td>🚀 Ракета (в async режиме)</td>
+</tr>
+<tr>
+<td><strong>HTTP/2</strong></td>
+<td>❌ Нет</td>
+<td>❌ Сложно</td>
+<td>✅ Да (<code>http2=True</code>)</td>
+</tr>
+<tr>
+<td><strong>Сложность</strong></td>
+<td>Легко</td>
+<td>Средне</td>
+<td>Легко</td>
+</tr>
+<tr>
+<td><strong>Популярность</strong></td>
+<td>Огромная (Legacy)</td>
+<td>Высокая (Prod)</td>
+<td>Растет (Modern)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_2">👨‍💻 КОД: Почувствуй разницу</h3>
+<h3 id="requests">Синхронный ад (Requests):</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Мы будем ждать ответа последовательно 3 раза</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;https://httpbin.org/delay/2&gt;&quot;</span><span class="p">)</span> <span class="c1"># Задержка 2 сек</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Запрос </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> готов&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Итог: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> сек&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># ИТОГ: ~6.0+ секунд. Ужас.</span>
+</code></pre></div>
+<h3 id="httpx-aiohttp">Асинхронный рай (Httpx / Aiohttp):</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">http2</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">tasks</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="c1"># Создаем 3 задачи, но НЕ ждем их сразу</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">tasks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;https://httpbin.org/delay/2&gt;&quot;</span><span class="p">))</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="c1"># Запускаем все одновременно!</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>        <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Итог: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> сек&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="c1"># ИТОГ: ~2.1 секунды. В 3 раза быстрее!</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<h3 id="_3">🧠 Вывод Архитектора:</h3>
 <ol>
-<li>Прочитай <a href="analysis_guide/">Инструкцию по анализу</a>.</li>
-<li>Определи тип сайта.</li>
-<li>Выбери подходящий <a href="tools_overview/">Шаблон</a>.</li>
+<li>Если ты пишешь скрипт "на коленке" проверить гипотезу — бери <strong><code>requests</code></strong> (или <code>httpx</code> в sync-режиме), не мучайся.</li>
+<li>Если ты делаешь парсер для работы (магазины, каталоги) — <strong>ТОЛЬКО Async</strong>.</li>
+<li>Между <code>aiohttp</code> и <code>httpx</code>:<ul>
+<li>Бери <strong><code>httpx</code></strong>, если сайт защищенный (нужен HTTP/2) или ты хочешь красивый код.</li>
+<li>Бери <strong><code>aiohttp</code></strong>, если тебе нужна максимальная "сырая" производительность (он чуть быстрее на объемах в 100к+ запросов) и тебе плевать на HTTP/2.</li>
+</ul>
+</li>
 </ol>
+<p><strong>Мой совет:</strong> Начинай сразу с <code>httpx</code> (Async). Привыкай к хорошему.</p>
 
 
 
@@ -1647,10 +1887,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

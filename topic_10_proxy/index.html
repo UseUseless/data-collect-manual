@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/">
+        <link rel="canonical" href="https://useuseless.github.io/data-collect-manual/topic_10_proxy/">
       
       
+        <link rel="prev" href="../topic_09_antibot/">
       
-        <link rel="next" href="analysis_guide/">
+      
+        <link rel="next" href="../topic_11_pydantic/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Методичка по Парсингу</title>
+        <title>10. Прокси и Ротация - Методичка по Парсингу</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -49,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#python" class="md-skip">
+        <a href="#10-residental-vs-server-ip" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -90,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-header__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Главная
+              10. Прокси и Ротация
             
           </span>
         </div>
@@ -226,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Навигация" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
+    <a href=".." title="Методичка по Парсингу" class="md-nav__button md-logo" aria-label="Методичка по Парсингу" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -253,37 +255,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Главная
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -299,48 +274,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Структура методички
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 С чего начать?
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -406,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="analysis_guide/" class="md-nav__link">
+      <a href="../analysis_guide/" class="md-nav__link">
         
   
   
@@ -434,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tools_overview/" class="md-nav__link">
+      <a href="../tools_overview/" class="md-nav__link">
         
   
   
@@ -466,8 +399,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -478,13 +413,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -505,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -574,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_01_intro/" class="md-nav__link">
+      <a href="../topic_01_intro/" class="md-nav__link">
         
   
   
@@ -602,7 +535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_02_hidden_json/" class="md-nav__link">
+      <a href="../topic_02_hidden_json/" class="md-nav__link">
         
   
   
@@ -630,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_03_protocols/" class="md-nav__link">
+      <a href="../topic_03_protocols/" class="md-nav__link">
         
   
   
@@ -717,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_04_clients/" class="md-nav__link">
+      <a href="../topic_04_clients/" class="md-nav__link">
         
   
   
@@ -745,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_05_parsers/" class="md-nav__link">
+      <a href="../topic_05_parsers/" class="md-nav__link">
         
   
   
@@ -773,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_06_browsers/" class="md-nav__link">
+      <a href="../topic_06_browsers/" class="md-nav__link">
         
   
   
@@ -801,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_07_drission/" class="md-nav__link">
+      <a href="../topic_07_drission/" class="md-nav__link">
         
   
   
@@ -834,6 +767,8 @@
                 
   
   
+    
+  
   
   
     
@@ -843,13 +778,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -870,7 +803,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -888,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_08_reverse_api/" class="md-nav__link">
+      <a href="../topic_08_reverse_api/" class="md-nav__link">
         
   
   
@@ -916,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_09_antibot/" class="md-nav__link">
+      <a href="../topic_09_antibot/" class="md-nav__link">
         
   
   
@@ -941,10 +874,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="topic_10_proxy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Прокси и Ротация
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -960,6 +920,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Пирамида Прокси (Типы)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-datacenter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Уровень 1: Datacenter (Серверные) — "Дешево и сердито"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-residential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Уровень 2: Residential (Резидентские) — "Маскировка под соседа"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Уровень 3: Mobile (Мобильные) — "Режим Бога"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Стратегия Ротации: Как менять IP?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Путь А: Gateway (Ротация на каждом запросе)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sticky-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Путь Б: Sticky Session (Липкая сессия)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 👨‍💻 КОД: Подключаем прокси
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Советы Архитектора:
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1031,7 +1110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_11_pydantic/" class="md-nav__link">
+      <a href="../topic_11_pydantic/" class="md-nav__link">
         
   
   
@@ -1059,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_12_architecture/" class="md-nav__link">
+      <a href="../topic_12_architecture/" class="md-nav__link">
         
   
   
@@ -1146,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_13_auth/" class="md-nav__link">
+      <a href="../topic_13_auth/" class="md-nav__link">
         
   
   
@@ -1174,7 +1253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="topic_14_storage/" class="md-nav__link">
+      <a href="../topic_14_storage/" class="md-nav__link">
         
   
   
@@ -1271,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_01_api/" class="md-nav__link">
+      <a href="../tool_01_api/" class="md-nav__link">
         
   
   
@@ -1299,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_02_json/" class="md-nav__link">
+      <a href="../tool_02_json/" class="md-nav__link">
         
   
   
@@ -1327,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_03_html/" class="md-nav__link">
+      <a href="../tool_03_html/" class="md-nav__link">
         
   
   
@@ -1355,7 +1434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_04_tls/" class="md-nav__link">
+      <a href="../tool_04_tls/" class="md-nav__link">
         
   
   
@@ -1383,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_05_browser/" class="md-nav__link">
+      <a href="../tool_05_browser/" class="md-nav__link">
         
   
   
@@ -1411,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_06_stealth/" class="md-nav__link">
+      <a href="../tool_06_stealth/" class="md-nav__link">
         
   
   
@@ -1439,7 +1518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_07_websockets/" class="md-nav__link">
+      <a href="../tool_07_websockets/" class="md-nav__link">
         
   
   
@@ -1467,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tool_08_mobile/" class="md-nav__link">
+      <a href="../tool_08_mobile/" class="md-nav__link">
         
   
   
@@ -1522,10 +1601,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📚 Структура методички
+        1. Пирамида Прокси (Типы)
       
     </span>
   </a>
@@ -1533,10 +1612,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#1-datacenter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 С чего начать?
+        Уровень 1: Datacenter (Серверные) — "Дешево и сердито"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-residential" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Уровень 2: Residential (Резидентские) — "Маскировка под соседа"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Уровень 3: Mobile (Мобильные) — "Режим Бога"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Стратегия Ротации: Как менять IP?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Путь А: Gateway (Ротация на каждом запросе)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sticky-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Путь Б: Sticky Session (Липкая сессия)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 👨‍💻 КОД: Подключаем прокси
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Советы Архитектора:
       
     </span>
   </a>
@@ -1563,20 +1719,93 @@
   
 
 
-<h1 id="python">Методичка по Парсингу на Python</h1>
-<p>Привет. Гайд собран на скорую руку, но пока был очень полезен.
-Может и еще кому-то пригодится. Если заметите ошибку - пишите мне.</p>
-<h3 id="_1">📚 Структура методички</h3>
+<h1 id="10-residental-vs-server-ip">Тема 10: Прокси и Ротация: Какие бывают прокси (Residental vs Server) и как правильно менять IP, чтобы не спалиться?</h1>
+<p>Представь, что ты грабишь банк. Ты надел маску (User-Agent), научился ходить как охранник (TLS Fingerprint), но... ты приходишь в банк <strong>каждые 5 секунд через одну и ту же дверь</strong>.
+Охранник не тупой. Он просто закроет эту дверь.</p>
+<p>IP-адрес — это твой физический вход. Чтобы парсить масштабно, тебе нужно менять "двери" постоянно.</p>
+<hr />
+<h3 id="1">1. Пирамида Прокси (Типы)</h3>
+<p>Не все IP одинаково полезны. Есть иерархия.</p>
+<h3 id="1-datacenter">Уровень 1: Datacenter (Серверные) — "Дешево и сердито"</h3>
+<p>Это IP-адреса хостингов (AWS, DigitalOcean, Hetzner).</p>
 <ul>
-<li><strong>Теория:</strong></li>
-<li><strong>Шаблоны:</strong> 8 готовых классов, которые можно копировать в проект.</li>
+<li><strong>Плюсы:</strong> Дешевые, безумно быстрые, стабильные.</li>
+<li><strong>Минусы:</strong> У них на лбу написано "Я СЕРВЕР". Сайты видят, что IP принадлежит дата-центру, а живые люди не сидят с серверов.</li>
+<li><strong>Применение:</strong> Идеально для простых сайтов без защиты. Для Avito или Google — мусор, забанят подсетью сразу.</li>
 </ul>
-<h3 id="_2">🚀 С чего начать?</h3>
+<h3 id="2-residential">Уровень 2: Residential (Резидентские) — "Маскировка под соседа"</h3>
+<p>Это IP-адреса реальных людей (домашний Wi-Fi). Как они их получают? Обычно через бесплатные VPN-приложения, которые вшивают юзерам SDK: "Ты юзаешь VPN бесплатно, а мы юзаем твой канал как прокси".</p>
+<ul>
+<li><strong>Плюсы:</strong> Выглядят как обычный Вася из Саратова. Траст (доверие) высокий.</li>
+<li><strong>Минусы:</strong> Дорогие (продаются за гигабайты трафика). Медленнее (канал зависит от Васи). Могут отвалиться в любой момент, если Вася выключил роутер.</li>
+<li><strong>Применение:</strong> Золотая середина для парсинга защищенных сайтов.</li>
+</ul>
+<h3 id="3-mobile">Уровень 3: Mobile (Мобильные) — "Режим Бога"</h3>
+<p>Это IP-адреса сотовых операторов (4G/5G).</p>
+<ul>
+<li><strong>Суть (CGNAT):</strong> У операторов мало IPv4 адресов. Поэтому за одним IP может сидеть 1000 реальных людей.</li>
+<li><strong>Почему это круто:</strong> Сайт <strong>БОИТСЯ</strong> банить мобильный IP. Если он забанит этот IP, он отрежет доступ тысяче реальных клиентов.</li>
+<li><strong>Плюсы:</strong> Почти бессмертные.</li>
+<li><strong>Минусы:</strong> Очень дорогие.</li>
+<li><strong>Применение:</strong> Instagram, Facebook, самые лютые защиты.</li>
+</ul>
+<hr />
+<h3 id="2-ip">2. Стратегия Ротации: Как менять IP?</h3>
+<p>У тебя есть два пути, как использовать прокси в коде.</p>
+<h3 id="gateway">Путь А: Gateway (Ротация на каждом запросе)</h3>
+<p>Ты покупаешь доступ к пулу прокси. Тебе дают <strong>один</strong> адрес (Gateway), например <code>proxy.provider.com:8000</code>.
+Каждый раз, когда ты шлешь запрос на этот адрес, провайдер сам перенаправляет его через новый случайный IP из пула.</p>
+<ul>
+<li><strong>Код:</strong> Элементарный. Ты просто долбишь в одну дырку.</li>
+<li><strong>Подходит для:</strong> Сбора общедоступных данных (цены, каталоги), где не нужно логиниться.</li>
+</ul>
+<h3 id="sticky-session">Путь Б: Sticky Session (Липкая сессия)</h3>
+<p>Если тебе нужно <strong>залогиниться</strong> и ходить по кабинету, тебе нельзя менять IP на каждом клике (сайт охренеет, что ты за секунду переместился из Токио в Париж).
+Тебе нужно "прилипнуть" к одному IP на время сессии (например, на 10 минут).</p>
+<ul>
+<li><strong>Как это делается:</strong> Обычно через изменение username прокси.<ul>
+<li>Запрос 1: <code>user-session-123:pass@host:port</code> -&gt; IP A</li>
+<li>Запрос 2: <code>user-session-123:pass@host:port</code> -&gt; IP A (тот же!)</li>
+<li>Запрос 3: <code>user-session-456:pass@host:port</code> -&gt; IP B (новый юзер = новый IP)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="3">3. 👨‍💻 КОД: Подключаем прокси</h3>
+<p>В <code>httpx</code> (и <code>requests</code>, и <code>curl_cffi</code>) прокси подключаются через словарь <code>proxies</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">httpx</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Формат: protocol://user:pass@host:port</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">PROXY_URL</span> <span class="o">=</span> <span class="s2">&quot;&lt;http://myuser:mypassword@gate.proxyservice.com:8000&gt;&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Для httpx прокси задаются через &#39;mounts&#39; или аргумент &#39;proxy&#39; (в новых версиях)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Самый простой способ:</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="s2">&quot;http://&quot;</span><span class="p">:</span> <span class="n">PROXY_URL</span><span class="p">,</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="s2">&quot;https://&quot;</span><span class="p">:</span> <span class="n">PROXY_URL</span><span class="p">,</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># 1. Ротация на каждом запросе (обычный режим)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">resp</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;https://httpbin.org/ip&gt;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Мой IP: </span><span class="si">{</span><span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;origin&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="c1"># Выведет IP прокси, а не твой</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># 2. Асинхронно + Ротация</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">fetch_with_proxy</span><span class="p">():</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="k">async</span> <span class="k">with</span> <span class="n">httpx</span><span class="o">.</span><span class="n">AsyncClient</span><span class="p">(</span><span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="n">resp</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;&lt;https://httpbin.org/ip&gt;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="_1">🧠 Советы Архитектора:</h3>
 <ol>
-<li>Прочитай <a href="analysis_guide/">Инструкцию по анализу</a>.</li>
-<li>Определи тип сайта.</li>
-<li>Выбери подходящий <a href="tools_overview/">Шаблон</a>.</li>
+<li><strong>Не покупай списки прокси (txt файлы).</strong> Это прошлый век. 90% из них мертвы. Покупай доступ к <strong>Gateway</strong> (сервисы типа Bright Data, Smartproxy, Soax, Webshare). Ты платишь за трафик, но получаешь рабочий сервис.</li>
+<li><strong>Экономь трафик.</strong> Если юзаешь резидентов (они дорогие), блокируй загрузку картинок и шрифтов (особенно в Playwright). Ты платишь за каждый гигабайт. Зачем тебе качать баннер на 5МБ?</li>
+<li><strong>Ошибка 407 (Proxy Authentication Required):</strong> Значит, ты забыл добавить свой IP в "белый список" в панели управления прокси-провайдера, либо ошибся в логине/пароле.</li>
 </ol>
+<p><strong>Блок 3 (Взлом) закрыт.</strong>
+Мы научились ломать API, подделывать TLS и менять маски (IP).
+Теперь ты умеешь добывать данные. Но как их <strong>хранить</strong> и <strong>структурировать</strong>, чтобы не превратить проект в помойку?</p>
 
 
 
@@ -1647,10 +1876,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
